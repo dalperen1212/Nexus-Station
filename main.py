@@ -96,7 +96,7 @@ class NexusApp(ctk.CTk):
         ctk.CTkButton(left, text=" yeni repo yap", command=self.open_create_repo_window, fg_color="#2CC985", text_color="black", height=40).pack(fill="x", pady=10)
         
         ctk.CTkLabel(left, text="repo listesi", font=ctk.CTkFont(weight="bold")).pack(pady=10)
-        ctk.CTkButton(left, text="🔄 yenile", command=self.fetch_repos_thread).pack(pady=5)
+        ctk.CTkButton(left, text=" yenile", command=self.fetch_repos_thread).pack(pady=5)
         self.repo_scroll = ctk.CTkScrollableFrame(left)
         self.repo_scroll.pack(fill="both", expand=True, padx=5, pady=5)
 
@@ -198,7 +198,7 @@ class NexusApp(ctk.CTk):
             self.add_controls()
 
     def add_controls(self):
-        ctk.CTkButton(self.action_frame, text="💻 VS Code", command=lambda: subprocess.Popen(['code', self.current_repo_path]), fg_color="#007ACC").pack(fill="x", pady=5)
+        ctk.CTkButton(self.action_frame, text=" VS Code", command=lambda: subprocess.Popen(['code', self.current_repo_path]), fg_color="#007ACC").pack(fill="x", pady=5)
         push_box = ctk.CTkFrame(self.action_frame, border_color="red", border_width=1)
         push_box.pack(fill="x", pady=10)
         self.entry_commit = ctk.CTkEntry(push_box, placeholder_text="kısaca ne yaptın..."); self.entry_commit.pack(fill="x", padx=5, pady=5)
